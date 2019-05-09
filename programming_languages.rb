@@ -37,6 +37,7 @@ def reformat_languages(languages)
   languages.keys.each do |lang_style|
     languages[lang_style].each do |lang, lang_type|
       binding.pry
+      # lang_type.values[0] # > "interpreted"
     end
   end
 end
