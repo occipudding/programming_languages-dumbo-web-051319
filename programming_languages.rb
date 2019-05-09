@@ -36,12 +36,16 @@ def reformat_languages(languages)
   new_hash = {}
   languages.keys.each do |lang_style|
     languages[lang_style].each do |lang, lang_type|
-      new_hash[lang] = {
-        :type => lang_type.values[0],
-        :style => []
-      }
-      new_hash[lang][:style] << lang_style
-      #binding.pry
+      if new_hash.include?(lang)
+        new_hash[lang][:style] << lang_style
+      else
+        new_hash[lang] = {
+          :type => lang_type.values[0],
+          :style => []
+        }
+        new_hash[lang][:style] << lang_style
+        #binding.pry
+      end
     end
   end
   binding.pry
