@@ -36,11 +36,11 @@ def reformat_languages(languages)
   new_hash = {}
   languages.keys.each do |lang_style|
     languages[lang_style].each do |lang, lang_type|
-      binding.pry
       new_hash[lang][:type] = lang_type
       new_hash[lang][:style].kind_of?(Array) ? new_hash[lang][:style] << lang_style : new_hash[lang][:style] = [lang_style]
     end
   end
+  binding.pry
 end
 
 reformat_languages(languages)
