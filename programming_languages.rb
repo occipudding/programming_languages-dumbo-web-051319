@@ -40,10 +40,11 @@ def reformat_languages(languages)
         :type => lang_type.values[0],
         :style => []
       }
-      #new_hash[lang][:style]
-      binding.pry
+      new_hash[lang][:style] << lang_style
+      #binding.pry
     end
   end
+  binding.pry
 end
 
 reformat_languages(languages)
